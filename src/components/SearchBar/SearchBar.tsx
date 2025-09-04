@@ -10,7 +10,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmit }) => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const form = e.currentTarget; // HTMLFormElement
+    const form = e.currentTarget;
     const input = form.elements.namedItem(
       'serchInput'
     ) as HTMLInputElement | null;
@@ -28,6 +28,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSubmit }) => {
     }
     onSubmit(inputValue);
   };
+
   return (
     <header className={s.searchWrap}>
       <form className={s.searchForm} onSubmit={handleSubmit}>
