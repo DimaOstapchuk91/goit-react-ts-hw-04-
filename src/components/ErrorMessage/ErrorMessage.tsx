@@ -1,4 +1,4 @@
-const ErrorMessage = () => {
+const ErrorMessage: React.FC = () => {
   return (
     <div>
       <p>An error occurred, sorry for the inconvenience</p>

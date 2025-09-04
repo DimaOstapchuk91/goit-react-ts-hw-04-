@@ -1,6 +1,12 @@
+import { ApiImage } from '../../types';
 import s from './ImageCard.module.css';
 
-const ImageCard = ({ dataImage, openModal }) => {
+interface ImageCardProps {
+  dataImage: ApiImage;
+  openModal: (imgUrl: string) => void;
+}
+
+const ImageCard: React.FC<ImageCardProps> = ({ dataImage, openModal }) => {
   const { urls, description, likes } = dataImage;
 
   return (
@@ -8,7 +14,7 @@ const ImageCard = ({ dataImage, openModal }) => {
       <div>
         <img
           className={s.imgGalary}
-          onClick={() => openModal({ url: urls.full, name: description })}
+          onClick={() => openModal(urls.full)}
           src={urls.small}
           alt={description}
         />

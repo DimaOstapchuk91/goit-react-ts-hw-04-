@@ -1,8 +1,18 @@
-import Modal from 'react-modal';
+import Modal, { Styles } from 'react-modal';
 import s from './ImageModal.module.css';
 
-const ImageModal = ({ modalIsOpen, closeModal, imageModal }) => {
-  const customStyles = {
+interface ImageModalProps {
+  modalIsOpen: boolean;
+  closeModal: () => void;
+  imageModal: string;
+}
+
+const ImageModal: React.FC<ImageModalProps> = ({
+  modalIsOpen,
+  closeModal,
+  imageModal,
+}) => {
+  const customStyles: Styles = {
     overlay: {
       position: 'fixed',
       top: 0,
@@ -18,7 +28,7 @@ const ImageModal = ({ modalIsOpen, closeModal, imageModal }) => {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      with: 1400,
+      width: 1400,
       height: 802,
       padding: 0,
     },
@@ -35,11 +45,7 @@ const ImageModal = ({ modalIsOpen, closeModal, imageModal }) => {
         contentLabel='Image Modal'
       >
         <div>
-          <img
-            className={s.imgModal}
-            src={imageModal.url}
-            alt={imageModal.name}
-          />
+          <img className={s.imgModal} src={imageModal} alt={imageModal} />
         </div>
       </Modal>
     </div>

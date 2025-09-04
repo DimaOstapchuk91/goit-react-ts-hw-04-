@@ -16,6 +16,7 @@
   width: 100%;
   padding: 10px 10px 10px 90px; /* Додаємо місце для кнопки */
   font-size: 16px;
+  outline: none;
   border-radius: 4px;
   border: 1px solid #ccc;
 }
